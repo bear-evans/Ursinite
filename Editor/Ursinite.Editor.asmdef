@@ -1,0 +1,18 @@
+{
+  "name": "Ursinite.Editor",
+  "rootNamespace": "Ursinite.Editor",
+  "references": [
+    "Ursinite"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

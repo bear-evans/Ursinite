@@ -1,9 +1,11 @@
 using UnityEngine;
 
-namespace TheBearDev.Ursinity.Runtime.Extensions
+namespace Ursinite
 {
     public static class MathExtensions
     {
+        #region Methods
+
         /// <summary>
         /// Converts an angle from degrees to radians.
         /// </summary>
@@ -24,10 +26,12 @@ namespace TheBearDev.Ursinity.Runtime.Extensions
         public static Vector2 GetPointOnCircle(this Vector2 center, float distance, float angle)
         {
             Vector2 result;
-            result.x = center.x + distance * Mathf.Cos(angle * Mathf.Deg2Rad);
-            result.y = center.y + distance * Mathf.Sin(angle * Mathf.Deg2Rad);
+            result.x = center.x + (distance * Mathf.Cos(angle * Mathf.Deg2Rad));
+            result.y = center.y + (distance * Mathf.Sin(angle * Mathf.Deg2Rad));
 
             return result;
         }
+
+        #endregion Methods
     }
 }

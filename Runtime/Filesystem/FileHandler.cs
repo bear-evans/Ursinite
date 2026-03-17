@@ -2,10 +2,12 @@ using System;
 using System.IO;
 using UnityEngine;
 
-namespace TheBearDev.Ursinity.Runtime.Filesystem
+namespace Ursinite.Filesystem
 {
     public static class FileHandler
     {
+        #region Methods
+
         /// <summary>
         /// Retrieves the list of file paths contained within the specified directory path.
         /// </summary>
@@ -13,12 +15,10 @@ namespace TheBearDev.Ursinity.Runtime.Filesystem
         /// <returns>Returns an array of file paths as strings, or null if an error occurs.</returns>
         public static string[] GetFilesInDirectory(string path)
         {
-            try
-            {
+            try {
                 return Directory.GetFiles(path);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Debug.LogError(e);
 
                 return null;
@@ -45,19 +45,16 @@ namespace TheBearDev.Ursinity.Runtime.Filesystem
             return File.Exists(path);
         }
 
-
         /// <summary>
         /// Deletes the file at the specified path.
         /// </summary>
         /// <param name="path">The file path of the file to delete.</param>
         public static void DeleteFile(string path)
         {
-            try
-            {
+            try {
                 File.Delete(path);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Debug.LogError(e);
             }
         }
@@ -69,12 +66,10 @@ namespace TheBearDev.Ursinity.Runtime.Filesystem
         /// <returns>Returns the file name and extension as a string, or null if an error occurs.</returns>
         public static string GetFileName(string path)
         {
-            try
-            {
+            try {
                 return Path.GetFileName(path);
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Debug.LogError(e);
             }
 
@@ -88,18 +83,15 @@ namespace TheBearDev.Ursinity.Runtime.Filesystem
         /// <returns>Returns the file size in bytes as a long value. Returns 0 if an error occurs.</returns>
         public static long GetFileSize(string path)
         {
-            try
-            {
+            try {
                 return new FileInfo(path).Length;
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Debug.LogError(e);
             }
 
             return 0;
         }
-
 
         /// <summary>
         /// Retrieves the last modified date and time of the file at the specified path.
@@ -108,16 +100,16 @@ namespace TheBearDev.Ursinity.Runtime.Filesystem
         /// <returns>Returns the last modified date and time as a DateTime object. Returns the default DateTime value if an error occurs.</returns>
         public static DateTime GetLastModified(string path)
         {
-            try
-            {
+            try {
                 return new FileInfo(path).LastWriteTime;
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Debug.LogError(e);
             }
 
             return default;
         }
+
+        #endregion Methods
     }
 }
