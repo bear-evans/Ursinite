@@ -1,4 +1,4 @@
-namespace TheBearDev.Ursinity.Runtime.Time
+namespace Ursinite
 {
     /// <summary>
     /// The PomodoroTimer class provides a utility for implementing a timer
@@ -28,11 +28,9 @@ namespace TheBearDev.Ursinity.Runtime.Time
         /// <value>
         /// Returns true if the timer is running; otherwise, false.
         /// </value>
-        public bool IsStarted
-        {
+        public bool IsStarted {
             get => timer.IsRunning;
         }
-
 
         /// <summary>
         /// Gets the duration of the timer in milliseconds.
@@ -40,11 +38,9 @@ namespace TheBearDev.Ursinity.Runtime.Time
         /// <value>
         /// Returns the total duration of the timer as a 64-bit integer value in milliseconds.
         /// </value>
-        public long DurationInMilliseconds
-        {
+        public long DurationInMilliseconds {
             get => durationInMilliseconds;
         }
-
 
         /// <summary>
         /// Gets the duration of the timer in seconds.
@@ -52,8 +48,7 @@ namespace TheBearDev.Ursinity.Runtime.Time
         /// <value>
         /// The duration in seconds, derived by converting the millisecond duration to seconds.
         /// </value>
-        public long DurationInSeconds
-        {
+        public long DurationInSeconds {
             get => DurationInMilliseconds / 1000;
         }
 
@@ -86,7 +81,6 @@ namespace TheBearDev.Ursinity.Runtime.Time
             timer.Stop();
         }
 
-
         /// <summary>
         /// Resets the timer to its initial state and immediately starts measuring elapsed time from zero.
         /// </summary>
@@ -96,7 +90,6 @@ namespace TheBearDev.Ursinity.Runtime.Time
             timer.Reset();
             timer.Start();
         }
-
 
         /// <summary>
         /// Determines whether the elapsed time of the timer has exceeded the specified duration, returning a boolean result.
@@ -109,7 +102,6 @@ namespace TheBearDev.Ursinity.Runtime.Time
             return timer.ElapsedMilliseconds > DurationInMilliseconds;
         }
 
-
         /// <summary>
         /// Checks if the timer has exceeded the specified duration and resets the timer
         /// if the duration is exceeded.
@@ -120,8 +112,7 @@ namespace TheBearDev.Ursinity.Runtime.Time
         /// </returns>
         public bool CheckAndReset()
         {
-            if (timer.ElapsedMilliseconds <= DurationInMilliseconds)
-            {
+            if (timer.ElapsedMilliseconds <= DurationInMilliseconds) {
                 return false;
             }
 
